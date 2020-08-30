@@ -631,7 +631,7 @@
                 <div style="margin-bottom: 5px" class="row">
                   <div class="col-3">
                     <input
-                      class="porkOrBeefRibs"
+                      class="porkOrBeefRibs porkOrBeefRibs-kilos"
                       disabled
                       type="checkbox"
                       name="sburguer"
@@ -646,7 +646,7 @@
                 <div style="margin-bottom: 5px" class="row">
                   <div class="col-3">
                     <input
-                      class="porkOrBeefRibs"
+                      class="porkOrBeefRibs porkOrBeefRibs-kilos"
                       disabled
                       type="checkbox"
                       name="sburguer"
@@ -661,7 +661,7 @@
                 <div style="margin-bottom: 5px" class="row">
                   <div class="col-3">
                     <input
-                      class="porkOrBeefRibs"
+                      class="porkOrBeefRibs porkOrBeefRibs-kilos"
                       disabled
                       type="checkbox"
                       name="sburguer"
@@ -676,7 +676,7 @@
                 <div style="margin-bottom: 5px" class="row">
                   <div class="col-3">
                     <input
-                      class="porkOrBeefRibs"
+                      class="porkOrBeefRibs porkOrBeefRibs-kilos"
                       disabled
                       type="checkbox"
                       name="sburguer"
@@ -694,7 +694,7 @@
                 <div class="row">
                   <div class="col-4">
                     <input
-                      class="porkOrBeefRibs"
+                      class="porkOrBeefRibs porkOrBeefRibs-flavours"
                       disabled
                       type="checkbox"
                       name="sburguer"
@@ -714,7 +714,7 @@
                 <div class="row">
                   <div class="col-4">
                     <input
-                      class="porkOrBeefRibs"
+                      class="porkOrBeefRibs porkOrBeefRibs-flavours"
                       disabled
                       type="checkbox"
                       name="sburguer"
@@ -734,7 +734,7 @@
                 <div class="row">
                   <div class="col-4">
                     <input
-                      class="porkOrBeefRibs"
+                      class="porkOrBeefRibs porkOrBeefRibs-flavours"
                       disabled
                       type="checkbox"
                       name="sburguer"
@@ -1248,6 +1248,8 @@
       var isBurguerSelected = false;
       var isBurguerRequiredSelected = false;
       var isPorkOrBeefSelected = false;
+      var isPorkOrBeefSelectedKilos = false;
+      var isPorkOrBeefSelectedFlavours = false;
 
       $(".burguersRequiredCreate").on("change", function (evt) {
         isBurguerRequiredSelected = false;
@@ -1318,19 +1320,57 @@
       });
       $(".porkOrBeefRibs-activator").on("change", function (evt) {
         isPorkOrBeefSelected = false;
+        let selected = null;
         $(".porkOrBeefRibs-activator").each(function (i, el) {
           if (el.checked) {
-            $(".porkOrBeefRibs").removeAttr("disabled");
+            selected = $(el).parent().next().find("h6").text();
+            if(selected == "Pork"){
+              $($(".porkOrBeefRibs")[0]).removeAttr("disabled");
+              $($(".porkOrBeefRibs")[1]).removeAttr("disabled");
+              $($(".porkOrBeefRibs")[2]).removeAttr("disabled");
+              $($(".porkOrBeefRibs")[3]).removeAttr("disabled");
+            }else{
+              $($(".porkOrBeefRibs")[1]).removeAttr("disabled");
+              $($(".porkOrBeefRibs")[3]).removeAttr("disabled");
+            }
             isPorkOrBeefSelected = true;
+            
           }
         });
 
         if (!isPorkOrBeefSelected) {
+          
           $(".porkOrBeefRibs").attr("disabled", "disabled");
         }
       });
 
-      // porkOrBeefRibs-activator
+      $(".porkOrBeefRibs-kilos").on("change", function (evt) {
+        isPorkOrBeefSelectedKilos = false;
+        $(".porkOrBeefRibs-kilos").each(function (i, el) {
+          if (el.checked) {
+            isPorkOrBeefSelectedKilos = true;
+          }
+        });
+
+        if(isPorkOrBeefSelectedKilos){
+          $($(".porkOrBeefRibs")[4]).removeAttr("disabled");
+          $($(".porkOrBeefRibs")[5]).removeAttr("disabled");
+          $($(".porkOrBeefRibs")[6]).removeAttr("disabled");
+        }else{
+          $($(".porkOrBeefRibs")[4]).attr("disabled", "disabled");
+          $($(".porkOrBeefRibs")[5]).attr("disabled", "disabled");
+          $($(".porkOrBeefRibs")[6]).attr("disabled", "disabled");
+        }
+      })
+      
+      $(".porkOrBeefRibs-flavours").on("change", function (evt) {
+        isPorkOrBeefSelectedFlavours = false;
+        $(".porkOrBeefRibs-flavours").each(function (i, el) {
+          if (el.checked) {
+            isPorkOrBeefSelectedFlavours = true;
+          }
+        });
+      })
     </script>
   </body>
 </html>
