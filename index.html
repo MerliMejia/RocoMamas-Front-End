@@ -1363,17 +1363,7 @@
                 "App 00ecd7359c44ebc7d2153a9bee850896-5fbbcac7-7521-42ba-864b-a1c66345cec1",
             },
             processData: false,
-            data: JSON.stringify({
-              checkboxes: checkboxes,
-              middleName: "Merli",
-              contactInformation: {
-                phone: [
-                  {
-                    number: c,
-                  },
-                ],
-              },
-            }),
+            data: JSON.stringify(checkboxes),
           };
 
           $.ajax(settings).done(function (response, status) {

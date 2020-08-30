@@ -1,0 +1,113 @@
+BURGERS:
+
+0   Chilli cheeze bomb
+1   Classic cheese
+2   Old Skool
+3   Rockstar
+4   Cheese + Bacon
+5   Mashrooms swizz
+6   Bacon Ezeehcguac
+7   Shackster
+8   Southstar
+9   slacker
+
+Promos
+
+10  promo1
+11  promo2
+13  promo3
+
+create
+
+14  Beff
+15  Chicken
+16  Veg
+
+17  SmashBurger
+18  extra smash
+19  Bacon
+20  aged cheddar
+21  swiss
+22  mozzarella
+23  feta
+24  blue cheese dressing
+25  guacamole
+26  mushrroms
+27  jalapeños
+28  Seet pickles
+29  rocket
+30  Chilli
+31  Caramelised onions
+32  bbq sauce
+33  smoked mayo
+34  Chilli mayo
+35  mofo mayo
+36  salsa
+37  nachos crums
+38  cheese sauce
+39  egg
+
+RIBS
+
+40  pork
+41  beef*
+42  1/4 kilo
+43  1/2 kilo*
+44  3/4 kilo
+45  1 kilo
+
+RIBS Flavour
+
+46  old Skool bbq
+47  peri peri
+48  sticky bbq
+
+Wings
+
+49  Flavour
+50  eight
+51  sixteen
+52  thirty two
+
+Wings Flavour
+
+53  buffalo
+54  mofo (f*hot)
+55  peri peri
+56  old Skool bbq
+57  lemon pepper
+
+Wings Dip
+
+58  Blue cheese
+59  ranch
+
+& also...
+
+60  Southern Fried Chicken Strips
+61  Chicken Caesar Salad
+62  Garden Greek Salad
+63  Spicy Slaw w/ Bacon
+64  Nacho Chips w/ Cheese Dip
+
+SHOESTRING
+FRIES
+
+65  SMALL R23
+66  MEDIUM R35
+67  LARGE   R49
+
+TURBO
+CHARGED FRIES
+Cheese
+
+68  SMALL
+69  MEDIUM
+70  add Chilli
+
+SIX BOMBS
+
+71  Chilli
+72  Jalapeño
+73  Feta
+74  Mixed Bombs
