@@ -105,7 +105,8 @@ h4 {
 }
 
 #createSmash {
-  margin-bottom: 80px;
+  margin-bottom: 20px;
+  background-color: white;
 }
 
 #createSmash p {
