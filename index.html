@@ -786,7 +786,7 @@
             <div class="col-6">
               <div style="margin-bottom: -10px" class="row">
                 <div class="col-3">
-                  <input type="checkbox" name="sburguer" />
+                  <input class="wings" type="checkbox" name="sburguer" />
                 </div>
                 <div style="padding-left: 5px; margin-top: 5px" class="col-5">
                   <p>FOUR</p>
@@ -796,7 +796,7 @@
               </div>
               <div style="margin-bottom: -10px" class="row">
                 <div class="col-3">
-                  <input type="checkbox" name="sburguer" />
+                  <input class="wings" type="checkbox" name="sburguer" />
                 </div>
                 <div style="padding-left: 5px; margin-top: 5px" class="col-5">
                   <p>EIGHT</p>
@@ -806,7 +806,7 @@
               </div>
               <div style="margin-bottom: -10px" class="row">
                 <div class="col-3">
-                  <input type="checkbox" name="sburguer" />
+                  <input class="wings" type="checkbox" name="sburguer" />
                 </div>
                 <div style="padding-left: 5px; margin-top: 5px" class="col-5">
                   <p>SIXTEEN</p>
@@ -816,7 +816,7 @@
               </div>
               <div style="margin-bottom: -10px" class="row">
                 <div class="col-3">
-                  <input type="checkbox" name="sburguer" />
+                  <input class="wings" type="checkbox" name="sburguer" />
                 </div>
                 <div style="padding-left: 5px; margin-top: 5px" class="col-5">
                   <p>THIRTY-TWO</p>
@@ -829,7 +829,7 @@
             <div class="col-6">
               <div class="row">
                 <div class="col-4">
-                  <input type="checkbox" name="sburguer" />
+                  <input disabled class="wings-flavours" type="checkbox" name="sburguer" />
                 </div>
                 <div
                   style="padding-left: 0px; margin-left: 0px; margin-top: 5px"
@@ -840,7 +840,7 @@
               </div>
               <div class="row">
                 <div class="col-4">
-                  <input type="checkbox" name="sburguer" />
+                  <input disabled class="wings-flavours" type="checkbox" name="sburguer" />
                 </div>
                 <div
                   style="padding-left: 0px; margin-left: 0px; margin-top: 5px"
@@ -851,7 +851,7 @@
               </div>
               <div class="row">
                 <div class="col-4">
-                  <input type="checkbox" name="sburguer" />
+                  <input disabled class="wings-flavours" type="checkbox" name="sburguer" />
                 </div>
                 <div
                   style="padding-left: 0px; margin-left: 0px; margin-top: 5px"
@@ -862,7 +862,7 @@
               </div>
               <div class="row">
                 <div class="col-4">
-                  <input type="checkbox" name="sburguer" />
+                  <input disabled class="wings-flavours" type="checkbox" name="sburguer" />
                 </div>
                 <div
                   style="padding-left: 0px; margin-left: 0px; margin-top: 5px"
@@ -873,7 +873,7 @@
               </div>
               <div class="row">
                 <div class="col-4">
-                  <input type="checkbox" name="sburguer" />
+                  <input disabled class="wings-flavours" type="checkbox" name="sburguer" />
                 </div>
                 <div
                   style="padding-left: 0px; margin-left: 0px; margin-top: 5px"
@@ -892,7 +892,7 @@
                 >
                   <div class="row">
                     <div class="col-6">
-                      <input type="checkbox" name="sburguer" />
+                      <input disabled class="wings-flavours wings-flavours-dip" type="checkbox" name="sburguer" />
                     </div>
                     <div
                       style="
@@ -908,7 +908,7 @@
                   </div>
                   <div style="margin-top: -15px" class="row">
                     <div class="col-6">
-                      <input type="checkbox" name="sburguer" />
+                      <input disabled class="wings-flavours wings-flavours-dip" type="checkbox" name="sburguer" />
                     </div>
                     <div
                       style="
@@ -1250,6 +1250,9 @@
       var isPorkOrBeefSelected = false;
       var isPorkOrBeefSelectedKilos = false;
       var isPorkOrBeefSelectedFlavours = false;
+      var isWingsSelected = false
+      var isWingsFlavoursSelected = false
+      var isWingsFlavoursDipSelected = false
 
       $(".burguersRequiredCreate").on("change", function (evt) {
         isBurguerRequiredSelected = false;
@@ -1371,6 +1374,39 @@
           }
         });
       })
+      $(".wings").on("change", function (evt) {
+        isWingsSelected = false;
+        $(".wings").each(function (i, el) {
+          if (el.checked) {
+            isWingsSelected = true;
+          }
+        });
+
+        if(isWingsSelected){
+          $(".wings-flavours").removeAttr("disabled");
+
+          $($(".wings-flavours")[5]).attr("disabled", "disabled");
+          $($(".wings-flavours")[6]).attr("disabled", "disabled");
+        }else{
+          $(".wings-flavours").attr("disabled", "disabled");
+        }
+      })
+      $(".wings-flavours").on("change", function (evt) {
+        isWingsFlavoursDipSelected = false;
+        $(".wings-flavours").each(function (i, el) {
+          if (el.checked) {
+            isWingsFlavoursDipSelected = true;
+          }
+        });
+
+        if(isWingsFlavoursDipSelected){
+          $(".wings-flavours-dip").removeAttr("disabled");
+        }else{
+          $(".wings-flavours-dip").attr("disabled", "disabled");
+        }
+      })
+
+      //wings
     </script>
   </body>
 </html>
