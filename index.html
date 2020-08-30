@@ -35,7 +35,7 @@
         <form action="">
           <div class="row">
             <div class="col-1">
-              <input type="checkbox" name="sburguer" />
+              <input class="burgersInput" type="checkbox" name="sburguer" />
             </div>
             <div class="col-9">
               <img src="images/chilli-cheeze-bomb.png" />
@@ -51,7 +51,7 @@
 
           <div class="row">
             <div class="col-1">
-              <input type="checkbox" name="sburguer" />
+              <input class="burgersInput" type="checkbox" name="sburguer" />
             </div>
             <div class="col-9">
               <img src="images/Classic-Cheese.png" />
@@ -67,7 +67,7 @@
 
           <div class="row">
             <div class="col-1">
-              <input type="checkbox" name="sburguer" />
+              <input class="burgersInput" type="checkbox" name="sburguer" />
             </div>
             <div class="col-9">
               <img src="images/Old-Skool.png" />
@@ -80,7 +80,7 @@
 
           <div class="row">
             <div class="col-1">
-              <input type="checkbox" name="sburguer" />
+              <input class="burgersInput" type="checkbox" name="sburguer" />
             </div>
             <div class="col-9">
               <img src="images/rock-star.png" />
@@ -96,7 +96,7 @@
 
           <div class="row">
             <div class="col-1">
-              <input type="checkbox" name="sburguer" />
+              <input class="burgersInput" type="checkbox" name="sburguer" />
             </div>
             <div class="col-9">
               <img src="images/cheese and bacon.png" />
@@ -112,7 +112,7 @@
 
           <div class="row">
             <div class="col-1">
-              <input type="checkbox" name="sburguer" />
+              <input class="burgersInput" type="checkbox" name="sburguer" />
             </div>
             <div class="col-9">
               <img src="images/mushroom-swizz.png" />
@@ -127,7 +127,7 @@
 
           <div class="row">
             <div class="col-1">
-              <input type="checkbox" name="sburguer" />
+              <input class="burgersInput" type="checkbox" name="sburguer" />
             </div>
             <div class="col-9">
               <img src="images/bacon-ezeech-guac.png" />
@@ -143,7 +143,7 @@
 
           <div class="row">
             <div class="col-1">
-              <input type="checkbox" name="sburguer" />
+              <input class="burgersInput" type="checkbox" name="sburguer" />
             </div>
             <div class="col-9">
               <img src="images/shackster.png" />
@@ -157,9 +157,9 @@
             </div>
           </div>
 
-          <div class="row">
+          <div id="promoSection" class="row">
             <div class="col-1">
-              <input type="checkbox" name="sburguer" />
+              <input class="burgersInput" type="checkbox" name="sburguer" />
             </div>
             <div class="col-9">
               <div class="row">
@@ -169,7 +169,11 @@
                 <div class="col-4">
                   <div class="row">
                     <div class="col-2">
-                      <input type="checkbox" name="sburguer" />
+                      <input
+                        class="burgersInput"
+                        type="checkbox"
+                        name="sburguer"
+                      />
                     </div>
                     <div class="col-2">
                       <h5 style="color: #f58220">HOT</h5>
@@ -186,7 +190,7 @@
 
           <div class="row">
             <div class="col-1">
-              <input type="checkbox" name="sburguer" />
+              <input class="burgersInput" type="checkbox" name="sburguer" />
             </div>
             <div class="col-9">
               <img src="images/slacker.png" />
@@ -209,6 +213,7 @@
               background-color: #f58220;
             "
             class="row"
+            i
           >
             <div style="padding: 0; margin-top: 15px" class="col-2">
               <img src="images/ltd.png" alt="" />
@@ -216,7 +221,7 @@
             <div style="padding-left: 5px; margin-top: 10px" class="col-3">
               <div class="row">
                 <div class="col-2">
-                  <input type="checkbox" name="sburguer" />
+                  <input class="burgersInput" type="checkbox" name="sburguer" />
                 </div>
                 <div style="padding-left: 8px; margin-top: 5px" class="col-6">
                   <p>PROMO1</p>
@@ -226,7 +231,7 @@
             <div style="padding-left: 5px; margin-top: 10px" class="col-3">
               <div class="row">
                 <div class="col-2">
-                  <input type="checkbox" name="sburguer" />
+                  <input class="burgersInput" type="checkbox" name="sburguer" />
                 </div>
                 <div style="padding-left: 8px; margin-top: 5px" class="col-6">
                   <p>PROMO2</p>
@@ -236,7 +241,7 @@
             <div style="padding-left: 5px; margin-top: 10px" class="col-3">
               <div class="row">
                 <div class="col-2">
-                  <input type="checkbox" name="sburguer" />
+                  <input class="burgersInput" type="checkbox" name="sburguer" />
                 </div>
                 <div style="padding-left: 8px; margin-top: 5px" class="col-6">
                   <p>PROMO3</p>
@@ -253,24 +258,36 @@
                   <div class="col-6">
                     <div class="row">
                       <div style="margin-top: 10px" class="col-4">
-                        <input type="checkbox" name="" />
+                        <input
+                          class="burguersRequiredCreate"
+                          type="checkbox"
+                          name=""
+                        />
                         <p>BEEF</p>
                       </div>
                       <div style="margin-top: 10px" class="col-4">
-                        <input type="checkbox" name="" />
+                        <input
+                          class="burguersRequiredCreate"
+                          type="checkbox"
+                          name=""
+                        />
                         <p>CHICKEN</p>
                       </div>
                       <div style="margin-top: 10px" class="col-4">
-                        <input type="checkbox" name="" />
+                        <input
+                          class="burguersRequiredCreate"
+                          type="checkbox"
+                          name=""
+                        />
                         <p>VEG</p>
                       </div>
                     </div>
                   </div>
                 </div>
-        
+
                 <div class="row">
                   <div class="col-1">
-                    <input type="checkbox" name="" />
+                    <input class="burgersInput" type="checkbox" name="" />
                   </div>
                   <div class="col-9">
                     <h3>SMASHBURGER</h3>
@@ -278,11 +295,17 @@
                   <div class="col-1">
                     <h4>R49</h4>
                   </div>
-                  <p style="margin-left: 20px; margin-top: -10px; font-weight: 600">
+                  <p
+                    style="
+                      margin-left: 20px;
+                      margin-top: -10px;
+                      font-weight: 600;
+                    "
+                  >
                     150g Smashed Beef, Tomato, Red Onion & RocoMayo.
                   </p>
                 </div>
-        
+
                 <div class="row">
                   <div class="col-1">
                     <input type="checkbox" name="" />
@@ -294,7 +317,7 @@
                     <h4>R39</h4>
                   </div>
                 </div>
-        
+
                 <div class="row">
                   <div class="col-1">
                     <input type="checkbox" name="" />
@@ -306,7 +329,7 @@
                     <h4>R17</h4>
                   </div>
                 </div>
-        
+
                 <div class="row">
                   <div class="col-1">
                     <input type="checkbox" name="" />
@@ -318,7 +341,7 @@
                     <h4>R14</h4>
                   </div>
                 </div>
-        
+
                 <div class="row">
                   <div class="col-1">
                     <input type="checkbox" name="" />
@@ -330,7 +353,7 @@
                     <h4>R15</h4>
                   </div>
                 </div>
-        
+
                 <div class="row">
                   <div class="col-1">
                     <input type="checkbox" name="" />
@@ -342,7 +365,7 @@
                     <h4>R14</h4>
                   </div>
                 </div>
-        
+
                 <div class="row">
                   <div class="col-1">
                     <input type="checkbox" name="" />
@@ -354,7 +377,7 @@
                     <h4>R10</h4>
                   </div>
                 </div>
-        
+
                 <div class="row">
                   <div class="col-1">
                     <input type="checkbox" name="" />
@@ -366,7 +389,7 @@
                     <h4>R10</h4>
                   </div>
                 </div>
-        
+
                 <div class="row">
                   <div class="col-1">
                     <input type="checkbox" name="" />
@@ -378,7 +401,7 @@
                     <h4>R12</h4>
                   </div>
                 </div>
-        
+
                 <div class="row">
                   <div class="col-1">
                     <input type="checkbox" name="" />
@@ -390,7 +413,7 @@
                     <h4>R18</h4>
                   </div>
                 </div>
-        
+
                 <div class="row">
                   <div class="col-1">
                     <input type="checkbox" name="" />
@@ -402,7 +425,7 @@
                     <h4>R10</h4>
                   </div>
                 </div>
-        
+
                 <div class="row">
                   <div class="col-1">
                     <input type="checkbox" name="" />
@@ -414,7 +437,7 @@
                     <h4>R8</h4>
                   </div>
                 </div>
-        
+
                 <div class="row">
                   <div class="col-1">
                     <input type="checkbox" name="" />
@@ -426,7 +449,7 @@
                     <h4>R9</h4>
                   </div>
                 </div>
-        
+
                 <div class="row">
                   <div class="col-1">
                     <input type="checkbox" name="" />
@@ -438,7 +461,7 @@
                     <h4>R9</h4>
                   </div>
                 </div>
-        
+
                 <div class="row">
                   <div class="col-1">
                     <input type="checkbox" name="" />
@@ -450,7 +473,7 @@
                     <h4>R13</h4>
                   </div>
                 </div>
-        
+
                 <div class="row">
                   <div class="col-1">
                     <input type="checkbox" name="" />
@@ -462,7 +485,7 @@
                     <h4>R10</h4>
                   </div>
                 </div>
-        
+
                 <div class="row">
                   <div class="col-1">
                     <input type="checkbox" name="" />
@@ -474,7 +497,7 @@
                     <h4>R8</h4>
                   </div>
                 </div>
-        
+
                 <div class="row">
                   <div class="col-1">
                     <input type="checkbox" name="" />
@@ -486,7 +509,7 @@
                     <h4>R8</h4>
                   </div>
                 </div>
-        
+
                 <div class="row">
                   <div class="col-1">
                     <input type="checkbox" name="" />
@@ -498,7 +521,7 @@
                     <h4>R8</h4>
                   </div>
                 </div>
-        
+
                 <div class="row">
                   <div class="col-1">
                     <input type="checkbox" name="" />
@@ -510,7 +533,7 @@
                     <h4>R10</h4>
                   </div>
                 </div>
-        
+
                 <div class="row">
                   <div class="col-1">
                     <input type="checkbox" name="" />
@@ -522,7 +545,7 @@
                     <h4>R8</h4>
                   </div>
                 </div>
-        
+
                 <div class="row">
                   <div class="col-1">
                     <input type="checkbox" name="" />
@@ -534,7 +557,7 @@
                     <h4>R14</h4>
                   </div>
                 </div>
-        
+
                 <div class="row">
                   <div class="col-1">
                     <input type="checkbox" name="" />
@@ -564,7 +587,11 @@
               <div style="padding-left: 0px; margin-left: -5px" class="col-4">
                 <div class="row">
                   <div class="col-6">
-                    <input type="checkbox" name="sburguer" />
+                    <input
+                      class="porkOrBeefRibs-activator"
+                      type="checkbox"
+                      name="sburguer"
+                    />
                   </div>
                   <div style="padding-left: 0px" class="col-6">
                     <h6 style="color: white">Pork</h6>
@@ -572,7 +599,11 @@
                 </div>
                 <div class="row">
                   <div class="col-6">
-                    <input type="checkbox" name="sburguer" />
+                    <input
+                      class="porkOrBeefRibs-activator"
+                      type="checkbox"
+                      name="sburguer"
+                    />
                   </div>
                   <div style="padding-left: 0px" class="col-6">
                     <h6 style="color: white">Beef*</h6>
@@ -599,9 +630,14 @@
               <div class="col-6">
                 <div style="margin-bottom: 5px" class="row">
                   <div class="col-3">
-                    <input type="checkbox" name="sburguer" />
+                    <input
+                      class="porkOrBeefRibs"
+                      disabled
+                      type="checkbox"
+                      name="sburguer"
+                    />
                   </div>
-                  <div style="padding-left: 0px; margin-top: 5px;" class="col-5">
+                  <div style="padding-left: 0px; margin-top: 5px" class="col-5">
                     <p>1/4 Kilo</p>
                   </div>
 
@@ -609,9 +645,14 @@
                 </div>
                 <div style="margin-bottom: 5px" class="row">
                   <div class="col-3">
-                    <input type="checkbox" name="sburguer" />
+                    <input
+                      class="porkOrBeefRibs"
+                      disabled
+                      type="checkbox"
+                      name="sburguer"
+                    />
                   </div>
-                  <div style="padding-left: 0px; margin-top: 5px;" class="col-5">
+                  <div style="padding-left: 0px; margin-top: 5px" class="col-5">
                     <p>1/2 Kilo*</p>
                   </div>
 
@@ -619,9 +660,14 @@
                 </div>
                 <div style="margin-bottom: 5px" class="row">
                   <div class="col-3">
-                    <input type="checkbox" name="sburguer" />
+                    <input
+                      class="porkOrBeefRibs"
+                      disabled
+                      type="checkbox"
+                      name="sburguer"
+                    />
                   </div>
-                  <div style="padding-left: 0px; margin-top: 5px;" class="col-5">
+                  <div style="padding-left: 0px; margin-top: 5px" class="col-5">
                     <p>3/4 Kilo</p>
                   </div>
 
@@ -629,9 +675,14 @@
                 </div>
                 <div style="margin-bottom: 5px" class="row">
                   <div class="col-3">
-                    <input type="checkbox" name="sburguer" />
+                    <input
+                      class="porkOrBeefRibs"
+                      disabled
+                      type="checkbox"
+                      name="sburguer"
+                    />
                   </div>
-                  <div style="padding-left: 0px; margin-top: 5px;" class="col-5">
+                  <div style="padding-left: 0px; margin-top: 5px" class="col-5">
                     <p>1 Kilo*</p>
                   </div>
 
@@ -642,7 +693,12 @@
               <div class="col-6">
                 <div class="row">
                   <div class="col-4">
-                    <input type="checkbox" name="sburguer" />
+                    <input
+                      class="porkOrBeefRibs"
+                      disabled
+                      type="checkbox"
+                      name="sburguer"
+                    />
                   </div>
                   <div
                     style="
@@ -657,7 +713,12 @@
                 </div>
                 <div class="row">
                   <div class="col-4">
-                    <input type="checkbox" name="sburguer" />
+                    <input
+                      class="porkOrBeefRibs"
+                      disabled
+                      type="checkbox"
+                      name="sburguer"
+                    />
                   </div>
                   <div
                     style="
@@ -672,7 +733,12 @@
                 </div>
                 <div class="row">
                   <div class="col-4">
-                    <input type="checkbox" name="sburguer" />
+                    <input
+                      class="porkOrBeefRibs"
+                      disabled
+                      type="checkbox"
+                      name="sburguer"
+                    />
                   </div>
                   <div
                     style="
@@ -766,11 +832,7 @@
                   <input type="checkbox" name="sburguer" />
                 </div>
                 <div
-                  style="
-                    padding-left: 0px;
-                    margin-left: 0px;
-                    margin-top: 5px;
-                  "
+                  style="padding-left: 0px; margin-left: 0px; margin-top: 5px"
                   class="col-8"
                 >
                   <p>Buffalo</p>
@@ -781,9 +843,7 @@
                   <input type="checkbox" name="sburguer" />
                 </div>
                 <div
-                  style="padding-left: 0px;
-                  margin-left: 0px;
-                  margin-top: 5px;"
+                  style="padding-left: 0px; margin-left: 0px; margin-top: 5px"
                   class="col-8"
                 >
                   <p>Mofo (F*HOT)</p>
@@ -794,9 +854,7 @@
                   <input type="checkbox" name="sburguer" />
                 </div>
                 <div
-                  style="padding-left: 0px;
-                  margin-left: 0px;
-                  margin-top: 5px;"
+                  style="padding-left: 0px; margin-left: 0px; margin-top: 5px"
                   class="col-8"
                 >
                   <p>Peri Peri</p>
@@ -807,13 +865,10 @@
                   <input type="checkbox" name="sburguer" />
                 </div>
                 <div
-                  style="padding-left: 0px;
-                  margin-left: 0px;
-                  margin-top: 5px;
-                  "
+                  style="padding-left: 0px; margin-left: 0px; margin-top: 5px"
                   class="col-8"
                 >
-                  <p style="width: 100px;">Old Skool BBQ</p>
+                  <p style="width: 100px">Old Skool BBQ</p>
                 </div>
               </div>
               <div class="row">
@@ -821,9 +876,7 @@
                   <input type="checkbox" name="sburguer" />
                 </div>
                 <div
-                  style="padding-left: 0px;
-                  margin-left: 0px;
-                  margin-top: 5px;"
+                  style="padding-left: 0px; margin-left: 0px; margin-top: 5px"
                   class="col-8"
                 >
                   <p>Lemon Pepper</p>
@@ -850,7 +903,7 @@
                       "
                       class="col-6"
                     >
-                      <p style="width: 100px;">Blue Cheese</p>
+                      <p style="width: 100px">Blue Cheese</p>
                     </div>
                   </div>
                   <div style="margin-top: -15px" class="row">
@@ -887,7 +940,7 @@
             & ALSO...
           </h3>
 
-          <div style="margin-bottom: 80px;" class="container">
+          <div style="margin-bottom: 80px" class="container">
             <div class="row">
               <div class="col-1">
                 <input type="checkbox" name="" />
@@ -952,8 +1005,6 @@
       </div>
     </section>
 
-    
-
     <div class="" id="bottomOrder">
       <h1>PLACE ORDER</h1>
     </div>
@@ -975,5 +1026,94 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      var isBurguerSelected = false;
+      var isBurguerRequiredSelected = false;
+      var isPorkOrBeefSelected = false;
+
+      $(".burguersRequiredCreate").on("change", function (evt) {
+        isBurguerRequiredSelected = false;
+        $(".burguersRequiredCreate").each(function (i, el) {
+          if (el.checked) {
+            isBurguerRequiredSelected = true;
+          }
+        });
+
+        if (!isBurguerRequiredSelected) {
+          let orange = false;
+          let int = setInterval(function () {
+            if (!isBurguerRequiredSelected) {
+              if (orange) {
+                orange = false;
+                $(".burguersRequiredCreate").next().css("color", "#f58220");
+              } else {
+                orange = true;
+                $(".burguersRequiredCreate").next().css("color", "black");
+              }
+
+              if (!isBurguerSelected) {
+                $(".burguersRequiredCreate").next().css("color", "black");
+                clearInterval(int);
+              }
+            } else {
+              $(".burguersRequiredCreate").next().css("color", "black");
+              clearInterval(int);
+            }
+          }, 200);
+        }
+      });
+
+      $(".burgersInput").on("change", function (evt) {
+        isBurguerSelected = false;
+        $(".burgersInput").each(function (i, el) {
+          if (el.checked) {
+            isBurguerSelected = true;
+          }
+        });
+
+        if (isBurguerSelected) {
+          $("#promoSection").get(0).scrollIntoView();
+          if (!isBurguerRequiredSelected) {
+            let orange = false;
+            let int = setInterval(function () {
+              if (!isBurguerRequiredSelected) {
+                if (orange) {
+                  orange = false;
+                  $(".burguersRequiredCreate").next().css("color", "#f58220");
+                } else {
+                  orange = true;
+                  $(".burguersRequiredCreate").next().css("color", "black");
+                }
+
+                if (!isBurguerSelected) {
+                  $(".burguersRequiredCreate").next().css("color", "black");
+                  clearInterval(int);
+                }
+              } else {
+                $(".burguersRequiredCreate").next().css("color", "black");
+                clearInterval(int);
+              }
+            }, 200);
+          }
+          // promoSection
+        }
+      });
+      $(".porkOrBeefRibs-activator").on("change", function (evt) {
+        isPorkOrBeefSelected = false;
+        $(".porkOrBeefRibs-activator").each(function (i, el) {
+          if (el.checked) {
+            $(".porkOrBeefRibs").removeAttr("disabled");
+            isPorkOrBeefSelected = true;
+          }
+        });
+
+        if (!isPorkOrBeefSelected) {
+          $(".porkOrBeefRibs").attr("disabled", "disabled");
+        }
+      });
+
+      // porkOrBeefRibs-activator
+    </script>
   </body>
 </html>
