@@ -1341,6 +1341,7 @@
         var url_string = window.location.href; //window.location.href
         var url = new URL(url_string);
         var c = url.searchParams.get("id");
+        var sessionId = url.searchParams.get("sessionId");
 
         var checkboxes = {};
 
@@ -1348,15 +1349,16 @@
           checkboxes[i] = el.checked;
         });
 
-        console.log(checkboxes);
+        console.log("SESSION ID: ", sessionId)
+        console.log("ID: ", c)
 
         if (c != null && c != "") {
           var url = "https://wa.me/" + c;
           var settings = {
             async: true,
             crossDomain: true,
-            url: "https://3vvg6j.api.infobip.com/people/2/persons?phone=" + c,
-            method: "PUT",
+            url: "https://api.infobip.com/bots/webhook/" + sessionId,
+            method: "POST",
             headers: {
               "content-type": "application/json",
               authorization:
