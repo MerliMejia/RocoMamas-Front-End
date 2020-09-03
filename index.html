@@ -1199,7 +1199,7 @@
                     class="row"
                   >
                     <div class="col-3">
-                      <input style="margin-top: 5px" type="checkbox" name="" />
+                      <input class="turboActivators" style="margin-top: 5px" type="checkbox" name="" />
                     </div>
                     <div class="col-6">
                       <p style="color: black">SMALL</p>
@@ -1215,7 +1215,7 @@
                     class="row"
                   >
                     <div class="col-3">
-                      <input style="margin-top: 5px" type="checkbox" name="" />
+                      <input class="turboActivators" style="margin-top: 5px" type="checkbox" name="" />
                     </div>
                     <div class="col-6">
                       <p style="color: black">MEDIUM</p>
@@ -1241,7 +1241,7 @@
                       </p>
                     </div>
                     <div class="col-4">
-                      <input style="margin-top: 0px" type="checkbox" name="" />
+                      <input disabled class="addChilli" style="margin-top: 0px" type="checkbox" name="" />
                     </div>
                   </div>
                 </div>
@@ -1588,6 +1588,21 @@
           }
         });
       });
+
+      $(".turboActivators").on("change", function(evt){
+        var c = 0;
+        $(".turboActivators").each(function (i, el) {
+          if (el.checked) {
+            c++;
+            $(".addChilli").removeAttr("disabled");
+          }
+        });
+
+        if(c == 0){
+          $(".addChilli").prop("checked", false)
+          $(".addChilli").attr("disabled", "disabled")
+        }
+      })
 
       //wings
     </script>
