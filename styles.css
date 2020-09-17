@@ -136,4 +136,26 @@ h4 {
   border-radius: 0px;
 }
 
+#addButton{
+  width: 50px;
+  height: 50px;
+  background-color: #3b3b3b;
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  border-radius: 80px;
+  z-index: 1000;
+}
+
+#addButton small{
+  color: white;
+  font-size: 30px;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
 /* f58220 */
