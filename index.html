@@ -74,20 +74,20 @@
       </div>
     </div>
 
-    <section>
+    <section class="orderBody">
       <div class="container" id="customFontsContainerList">
         <a
             class="btn btn-primary openOrder"
             data-toggle="collapse"
-            href="#c-1"
+            href="#c-0"
             role="button"
             aria-expanded="false"
-            aria-controls="c-1"
+            aria-controls="c-0"
           >
             Name: Order 1
           </a>
 
-        <div class="collapse" id="c-1">
+        <div class="collapse" id="c-0">
           <form action="">
             <div class="row">
               <div class="col-1">
@@ -1456,7 +1456,7 @@
       <h1>PLACE ORDER</h1>
     </div>
 
-    <div id="addButton">
+    <div onclick="addOrder()" id="addButton">
       <small>+</small>
     </div>
 
@@ -1479,6 +1479,16 @@
     ></script>
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script>
+      function addOrder(){
+        $(".orderBody:last").after($(".orderBody:last").clone())
+        var int = setInterval(function(){
+          console.log($(".orderBody:last"))
+          clearInterval(int)
+        }, 1000)
+      }
+    </script>
 
     <script>
       window.onload = function () {
