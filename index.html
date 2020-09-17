@@ -1482,9 +1482,27 @@
 
     <script>
       function addOrder(){
+        $(".orderBody:last .openOrder").click()
         $(".orderBody:last").after($(".orderBody:last").clone())
         var int = setInterval(function(){
-          console.log($(".orderBody:last"))
+          //console.log($(".orderBody:last"))
+          var href = $(".orderBody:last .openOrder").attr("href");
+          var index = href.split("-")[1];
+          index++;
+
+          var newHref = href.split("-")[0] + "-" + index
+          $(".orderBody:last .openOrder").attr("href", newHref);
+          console.log(newHref)
+          
+          var arial = $(".orderBody:last .openOrder").attr("aria-controls");
+          var aIndex = arial.split("-")[1];
+          aIndex++;
+
+          var newArial = arial.split("-")[0] + "-" + aIndex
+          $(".orderBody:last .openOrder").attr("aria-controls", newArial);
+          console.log(newArial)
+
+          //$(".orderBody:last .openOrder").click()
           clearInterval(int)
         }, 1000)
       }
