@@ -1492,15 +1492,20 @@
 
           var newHref = href.split("-")[0] + "-" + index
           $(".orderBody:last .openOrder").attr("href", newHref);
-          console.log(newHref)
           
           var arial = $(".orderBody:last .openOrder").attr("aria-controls");
           var aIndex = arial.split("-")[1];
           aIndex++;
 
           var newArial = arial.split("-")[0] + "-" + aIndex
+          $(".orderBody:last .openOrder").text("Name: Order " + (aIndex + 1))
           $(".orderBody:last .openOrder").attr("aria-controls", newArial);
-          console.log(newArial)
+          $(".orderBody:last .collapsing").attr("id", newArial);
+
+          $(".orderBody:last").css("margin-top", "-20px")
+          $(".orderBody:last #customFontsContainerList").css("margin-top", "0px")
+
+          $(".orderBody:last .openOrder").click()
 
           //$(".orderBody:last .openOrder").click()
           clearInterval(int)
