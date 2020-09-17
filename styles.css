@@ -125,4 +125,15 @@ h4 {
 #customFontsContainerList > form > div:nth-child(10) > div.col-9 > img{
   width: 70%;
 }
+
+.openOrder{
+  margin-bottom: 20px;
+  background-color: #3b3b3b;
+  width: calc(100% + 30px);
+  text-align: left;
+  margin-left: -15px;
+  border-style: none;
+  border-radius: 0px;
+}
+
 /* f58220 */
