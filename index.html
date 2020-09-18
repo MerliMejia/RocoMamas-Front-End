@@ -1481,6 +1481,53 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script>
+      function findRowPArent(el) {
+        if ($(el).hasClass("row")) {
+          return el;
+        }
+
+        return findRowPArent($(el).parent());
+      }
+
+      function findOrderParent(el) {
+        if ($(el).hasClass("collapse")) {
+          return $(el).prev().text().split(": ")[1];
+        }
+        return findOrderParent($(el).parent());
+      }
+
+      var toOrder = {};
+
+      function addChange(){
+        $("input[type = 'checkbox']").change(function (evt) {
+        toOrder = {};
+        $("input[type = 'checkbox']").each(function (i, el) {
+          if (el.checked == true) {
+            if (
+              toOrder[
+                findOrderParent(el).replace(/ /g, "").replace("\n", "")
+              ] == undefined
+            ) {
+              toOrder[
+                findOrderParent(el).replace(/ /g, "").replace("\n", "")
+              ] = [];
+              toOrder[
+                findOrderParent(el).replace(/ /g, "").replace("\n", "")
+              ].push(findRowPArent(el));
+            } else {
+              toOrder[
+                findOrderParent(el).replace(/ /g, "").replace("\n", "")
+              ].push(findRowPArent(el));
+            }
+
+            console.log(toOrder);
+          }
+        });
+      });
+      }
+
+      addChange()
+
       var orders = 0;
 
       function addOrder() {
@@ -1512,8 +1559,9 @@
 
           $(".orderBody:last .openOrder").click();
           orders++;
-        }else{
-          alert("You have reached the maximum limit number of orders!")
+          addChange()
+        } else {
+          alert("You have reached the maximum limit number of orders!");
         }
       }
     </script>
