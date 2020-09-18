@@ -1513,11 +1513,11 @@
               ] = [];
               toOrder[
                 findOrderParent(el).replace(/ /g, "").replace("\n", "")
-              ].push(findRowPArent(el));
+              ].push(findRowPArent(el).html());
             } else {
               toOrder[
                 findOrderParent(el).replace(/ /g, "").replace("\n", "")
-              ].push(findRowPArent(el));
+              ].push(findRowPArent(el).html());
             }
 
             console.log(toOrder);
