@@ -77,15 +77,15 @@
     <section class="orderBody">
       <div class="container" id="customFontsContainerList">
         <a
-            class="btn btn-primary openOrder"
-            data-toggle="collapse"
-            href="#c-0"
-            role="button"
-            aria-expanded="false"
-            aria-controls="c-0"
-          >
-            Name: Order 1
-          </a>
+          class="btn btn-primary openOrder"
+          data-toggle="collapse"
+          href="#c-0"
+          role="button"
+          aria-expanded="false"
+          aria-controls="c-0"
+        >
+          Name: Order 1
+        </a>
 
         <div class="collapse" id="c-0">
           <form action="">
@@ -1481,35 +1481,36 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script>
-      function addOrder(){
-        $(".orderBody:last .openOrder").click()
-        $(".orderBody:last").after($(".orderBody:last").clone())
-        var int = setInterval(function(){
+      function addOrder() {
+        $(".orderBody:last .openOrder").click();
+        $(".orderBody:last").after($(".orderBody:last").clone());
+
+        var href = $(".orderBody:last .openOrder").attr("href");
+        var index = href.split("-")[1];
+        index++;
+
+        var newHref = href.split("-")[0] + "-" + index;
+        $(".orderBody:last .openOrder").attr("href", newHref);
+
+        var arial = $(".orderBody:last .openOrder").attr("aria-controls");
+        var aIndex = arial.split("-")[1];
+        aIndex++;
+
+        var newArial = arial.split("-")[0] + "-" + aIndex;
+        $(".orderBody:last .openOrder").text("Name: Order " + (aIndex + 1));
+        $(".orderBody:last .openOrder").attr("aria-controls", newArial);
+        $(".orderBody:last .collapsing").attr("id", newArial);
+
+        $(".orderBody:last").css("margin-top", "-20px");
+        $(".orderBody:last #customFontsContainerList").css("margin-top", "0px");
+
+        $(".orderBody:last .openOrder").click();
+        var int = setInterval(function () {
           //console.log($(".orderBody:last"))
-          var href = $(".orderBody:last .openOrder").attr("href");
-          var index = href.split("-")[1];
-          index++;
-
-          var newHref = href.split("-")[0] + "-" + index
-          $(".orderBody:last .openOrder").attr("href", newHref);
-          
-          var arial = $(".orderBody:last .openOrder").attr("aria-controls");
-          var aIndex = arial.split("-")[1];
-          aIndex++;
-
-          var newArial = arial.split("-")[0] + "-" + aIndex
-          $(".orderBody:last .openOrder").text("Name: Order " + (aIndex + 1))
-          $(".orderBody:last .openOrder").attr("aria-controls", newArial);
-          $(".orderBody:last .collapsing").attr("id", newArial);
-
-          $(".orderBody:last").css("margin-top", "-20px")
-          $(".orderBody:last #customFontsContainerList").css("margin-top", "0px")
-
-          $(".orderBody:last .openOrder").click()
 
           //$(".orderBody:last .openOrder").click()
-          clearInterval(int)
-        }, 1000)
+          clearInterval(int);
+        }, 1000);
       }
     </script>
 
