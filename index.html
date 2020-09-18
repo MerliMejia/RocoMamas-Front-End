@@ -1558,6 +1558,9 @@
           );
 
           $(".orderBody:last .openOrder").click();
+          $(".orderBody:last input[type = 'checkbox']").each(function(i, el){
+            el.checked = false;
+          })
           orders++;
           addChange()
         } else {
