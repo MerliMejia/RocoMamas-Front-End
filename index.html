@@ -1481,36 +1481,40 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script>
+      var orders = 0;
+
       function addOrder() {
-        $(".orderBody:last .openOrder").click();
-        $(".orderBody:last").after($(".orderBody:last").clone());
+        if (orders < 7) {
+          $(".orderBody:last .openOrder").click();
+          $(".orderBody:last").after($(".orderBody:last").clone());
 
-        var href = $(".orderBody:last .openOrder").attr("href");
-        var index = href.split("-")[1];
-        index++;
+          var href = $(".orderBody:last .openOrder").attr("href");
+          var index = href.split("-")[1];
+          index++;
 
-        var newHref = href.split("-")[0] + "-" + index;
-        $(".orderBody:last .openOrder").attr("href", newHref);
+          var newHref = href.split("-")[0] + "-" + index;
+          $(".orderBody:last .openOrder").attr("href", newHref);
 
-        var arial = $(".orderBody:last .openOrder").attr("aria-controls");
-        var aIndex = arial.split("-")[1];
-        aIndex++;
+          var arial = $(".orderBody:last .openOrder").attr("aria-controls");
+          var aIndex = arial.split("-")[1];
+          aIndex++;
 
-        var newArial = arial.split("-")[0] + "-" + aIndex;
-        $(".orderBody:last .openOrder").text("Name: Order " + (aIndex + 1));
-        $(".orderBody:last .openOrder").attr("aria-controls", newArial);
-        $(".orderBody:last .collapsing").attr("id", newArial);
+          var newArial = arial.split("-")[0] + "-" + aIndex;
+          $(".orderBody:last .openOrder").text("Name: Order " + (aIndex + 1));
+          $(".orderBody:last .openOrder").attr("aria-controls", newArial);
+          $(".orderBody:last .collapsing").attr("id", newArial);
 
-        $(".orderBody:last").css("margin-top", "-20px");
-        $(".orderBody:last #customFontsContainerList").css("margin-top", "0px");
+          $(".orderBody:last").css("margin-top", "-20px");
+          $(".orderBody:last #customFontsContainerList").css(
+            "margin-top",
+            "0px"
+          );
 
-        $(".orderBody:last .openOrder").click();
-        var int = setInterval(function () {
-          //console.log($(".orderBody:last"))
-
-          //$(".orderBody:last .openOrder").click()
-          clearInterval(int);
-        }, 1000);
+          $(".orderBody:last .openOrder").click();
+          orders++;
+        }else{
+          alert("You have reached the maximum limit number of orders!")
+        }
       }
     </script>
 

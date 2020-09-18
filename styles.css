@@ -158,4 +158,13 @@ h4 {
   margin: auto;
 }
 
+.btn-primary:hover{
+  background-color: #f58220 !important;
+  border-color: #f58220 !important;
+}
+
+.btn-primary.focus, .btn-primary:focus{
+  box-shadow: 0 0 0 0.2rem  #f58220 !important;
+}
+
 /* f58220 */
