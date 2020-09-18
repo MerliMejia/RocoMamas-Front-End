@@ -1452,12 +1452,33 @@
       </div>
     </section>
 
-    <div onclick="placeOrder()" class="" id="bottomOrder">
+    <div onclick="openConfirmation()" class="" id="bottomOrder">
       <h1>PLACE ORDER</h1>
     </div>
 
     <div onclick="addOrder()" id="addButton">
       <small>+</small>
+    </div>
+
+    <div class="confirmationContainer">
+      
+      <h1 class="tittle">ORDER <svg
+        onclick="closeConfirmation()"
+        id="close"
+        width="3rem"
+        height="3rem"
+        viewBox="0 0 16 16"
+        class="bi bi-x"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+        />
+      </svg></h1>
+
+      <div class="container-fluid" id="content"></div>
     </div>
 
     <!-- Optional JavaScript -->
@@ -1481,6 +1502,13 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script>
+      function openConfirmation() {
+        $(".confirmationContainer").show();
+      }
+      function closeConfirmation() {
+        $(".confirmationContainer").hide();
+      }
+
       function findRowPArent(el) {
         if ($(el).hasClass("row")) {
           return el;
@@ -1520,8 +1548,14 @@
                 ].push(findRowPArent(el).html());
               }
 
-              window.localStorage.setItem("orders", JSON.stringify(toOrder));
-              console.log(JSON.parse(window.localStorage.getItem("orders")));
+              console.log(toOrder)
+              $(".confirmationContainer #content").html("")
+              for(var i in toOrder){
+                $(".confirmationContainer #content").append("<h2>" + i + "</h1>")
+                for(var a = 0; a < toOrder[i].length; a++){
+                  $(".confirmationContainer #content").append(toOrder[i][a])
+                }
+              }
             }
           });
         });
