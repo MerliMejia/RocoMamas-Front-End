@@ -76,23 +76,36 @@
 
     <section class="orderBody">
       <div class="container" id="customFontsContainerList">
-        <a
-          class="btn btn-primary openOrder"
-          data-toggle="collapse"
-          href="#c-0"
-          role="button"
-          aria-expanded="false"
-          aria-controls="c-0"
+        <div
+          style="
+            background-color: #3b3b3b;
+            height: fit-content;
+            margin-bottom: 20px;
+          "
+          class="row"
         >
-          Order 1
-          <img
-            order="c-0"
-            onclick="editOrder(this)"
-            style="width: 24px; float: right; margin-top: 0px"
-            src="/images/edit.png"
-            alt=""
-          />
-        </a>
+          <div style="height: fit-content" class="col-11">
+            <a
+              class="btn btn-primary openOrder"
+              data-toggle="collapse"
+              href="#c-0"
+              role="button"
+              aria-expanded="false"
+              aria-controls="c-0"
+            >
+              Order 1
+            </a>
+          </div>
+          <div style="height: fit-content; position: relative;" class="col-1">
+            <img
+              order="c-0"
+              onclick="editOrder(this)"
+              style="width: 24px; float: right; margin-top: 5px"
+              src="/images/edit.png"
+              alt=""
+            />
+          </div>
+        </div>
 
         <div class="collapse" id="c-0">
           <form action="">
@@ -1459,7 +1472,7 @@
       </div>
     </section>
 
-    <div onclick="openConfirmation()" class="" id="bottomOrder">
+    <div class="" id="bottomOrder">
       <h1>PLACE ORDER</h1>
     </div>
 
@@ -1535,16 +1548,13 @@
 
       var toOrder = {};
 
-      function editOrder(el){
+      function editOrder(el) {
+        var orderEl = $(el).parent().prev().find("a")
+        console.log(orderEl)
+        var pront = prompt("PLEASE, ENTER NEW NAME", orderEl.text().replace(/\s/g,''));
+        console.log(pront)
 
-        var pront = prompt("PLEASE, ENTER NEW NAME", )
-
-        var index = $(el).attr("order")
-        $(".openOrder").each(function(i, e){
-          if($(el).attr("href") == "#" + index){
-
-          }
-        })
+        orderEl.text(pront)
 
       }
 
@@ -1617,7 +1627,9 @@
           );
 
           $(".orderBody:last .openOrder").click();
-          $(".orderBody:last .openOrder").next().attr("order", "c-" + aIndex)
+          $(".orderBody:last .openOrder")
+            .next()
+            .attr("order", "c-" + aIndex);
           $(".orderBody:last input[type = 'checkbox']").each(function (i, el) {
             el.checked = false;
           });

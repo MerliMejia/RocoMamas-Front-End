@@ -125,8 +125,7 @@ h4 {
 }
 
 .openOrder {
-  margin-bottom: 20px;
-  background-color: #3b3b3b;
+  background-color: transparent;
   width: calc(100% + 30px);
   text-align: left;
   margin-left: -15px;
@@ -157,13 +156,13 @@ h4 {
 }
 
 .btn-primary:hover {
-  background-color: #f58220 !important;
-  border-color: #f58220 !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
 }
 
 .btn-primary.focus,
 .btn-primary:focus {
-  box-shadow: 0 0 0 0.2rem #f58220 !important;
+  box-shadow: 0 0 0 0.2rem transparent !important;
 }
 
 .confirmationContainer #content{
