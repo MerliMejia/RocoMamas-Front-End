@@ -30,7 +30,9 @@ html {
   color: white;
   padding: 5px;
   text-align: center;
-  position: static;
+  width: calc(100% + 30px);
+  margin-left: -15px;
+  margin-bottom: 20px;
 }
 
 #tittleContainer h1 {
@@ -39,7 +41,7 @@ html {
 }
 
 #customFontsContainerList {
-  margin-top: 125px;
+  margin-top: 90px;
 }
 
 input {
@@ -136,16 +138,19 @@ h4 {
 #addButton {
   width: 50px;
   height: 50px;
-  background-color: #3b3b3b;
+  background-color: #f58220;
   position: fixed;
   bottom: 70px;
   right: 20px;
   border-radius: 80px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #3b3b3b;
   z-index: 1000;
 }
 
 #addButton small {
-  color: white;
+  color: #3b3b3b;
   font-size: 30px;
   width: 100%;
   text-align: center;
@@ -165,32 +170,33 @@ h4 {
   box-shadow: 0 0 0 0.2rem transparent !important;
 }
 
-.confirmationContainer #content{
+.confirmationContainer #content {
   margin-top: 55px;
 }
 
-.confirmationContainer .col-6 p{
+.confirmationContainer .col-6 p {
   margin-top: 20px !important;
   margin-bottom: 0px !important;
   margin-left: 10px;
 }
 
-.confirmationContainer h4{
+.confirmationContainer h4 {
   display: none;
 }
-.confirmationContainer .col-9 p{
+.confirmationContainer .col-9 p {
   display: none;
 }
-.confirmationContainer .col-9 h3, .confirmationContainer .col-9 h6{
+.confirmationContainer .col-9 h3,
+.confirmationContainer .col-9 h6 {
   margin-top: 20px;
 }
-.confirmationContainer .col-4 p{
+.confirmationContainer .col-4 p {
   display: none;
 }
-.confirmationContainer #content > p{
+.confirmationContainer #content > p {
   display: none;
 }
-.confirmationContainer .col-2 h5{
+.confirmationContainer .col-2 h5 {
   display: none;
 }
 
@@ -211,7 +217,7 @@ h4 {
   width: 100%;
 }
 
-.confirmationContainer input{
+.confirmationContainer input {
   display: none;
 }
 
