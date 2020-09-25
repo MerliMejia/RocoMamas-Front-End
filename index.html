@@ -93,10 +93,10 @@
               aria-expanded="false"
               aria-controls="c-0"
             >
-              Order 1
+              Order for Rockstar: 1
             </a>
           </div>
-          <div style="height: fit-content; position: relative;" class="col-1">
+          <div style="height: fit-content; position: relative" class="col-1">
             <img
               order="c-0"
               onclick="editOrder(this)"
@@ -1549,13 +1549,13 @@
       var toOrder = {};
 
       function editOrder(el) {
-        var orderEl = $(el).parent().prev().find("a")
-        console.log(orderEl)
-        var pront = prompt("PLEASE, ENTER NEW NAME", orderEl.text().replace(/\s/g,''));
-        console.log(pront)
-
-        orderEl.text(pront)
-
+        var orderEl = $(el).parent().prev().find("a");
+        console.log(orderEl);
+        var pront = prompt(
+          "PLEASE, ENTER NEW NAME",
+          orderEl.text().replace(/\s/g, "").split(":")[1]
+        );
+        if(pront !== null && pront.length > 0) orderEl.text(orderEl.text().split(":")[0] + " " + pront);
       }
 
       function addChange() {
@@ -1616,7 +1616,9 @@
           aIndex++;
 
           var newArial = arial.split("-")[0] + "-" + aIndex;
-          $(".orderBody:last .openOrder").text("Order " + (aIndex + 1));
+          $(".orderBody:last .openOrder").text(
+            "Order for Rockstar:  " + (aIndex + 1)
+          );
           $(".orderBody:last .openOrder").attr("aria-controls", newArial);
           $(".orderBody:last .collapsing").attr("id", newArial);
 
