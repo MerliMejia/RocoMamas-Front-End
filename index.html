@@ -1637,6 +1637,7 @@
             .attr("order", "c-" + aIndex);
           $(".orderBody:last input[type = 'checkbox']").each(function (i, el) {
             el.checked = false;
+            $(el).removeAttr("disabled")
           });
           orders++;
           addChange();
