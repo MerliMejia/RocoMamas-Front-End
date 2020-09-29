@@ -1769,87 +1769,92 @@
             if (el.checked) {
               selected = $(el).parent().next().find("h6").text();
               if (selected == "Pork") {
-                $($(".porkOrBeefRibs")[0]).removeAttr("disabled");
-                $($(".porkOrBeefRibs")[1]).removeAttr("disabled");
-                $($(".porkOrBeefRibs")[2]).removeAttr("disabled");
-                $($(".porkOrBeefRibs")[3]).removeAttr("disabled");
+                $($("#" + orderParent[0].id +" .porkOrBeefRibs")[0]).removeAttr("disabled");
+                $($("#" + orderParent[0].id +" .porkOrBeefRibs")[1]).removeAttr("disabled");
+                $($("#" + orderParent[0].id +" .porkOrBeefRibs")[2]).removeAttr("disabled");
+                $($("#" + orderParent[0].id +" .porkOrBeefRibs")[3]).removeAttr("disabled");
               } else {
-                $($(".porkOrBeefRibs")[1]).removeAttr("disabled");
-                $($(".porkOrBeefRibs")[3]).removeAttr("disabled");
+                $($("#" + orderParent[0].id + " .porkOrBeefRibs")[1]).removeAttr("disabled");
+                $($("#" + orderParent[0].id + " .porkOrBeefRibs")[3]).removeAttr("disabled");
               }
               isPorkOrBeefSelected = true;
             }
           });
 
           if (!isPorkOrBeefSelected) {
-            $(".porkOrBeefRibs").attr("disabled", "disabled");
+            $("#" + orderParent[0].id + " .porkOrBeefRibs").attr("disabled", "disabled");
           }
         });
 
         $(".porkOrBeefRibs-kilos").on("change", function (evt) {
-          $(".porkOrBeefRibs-flavours").prop("checked", false);
+          var orderParent = findOrderParentElement(evt.target)
+          $("#" + orderParent[0].id + " .porkOrBeefRibs-flavours").prop("checked", false);
           isPorkOrBeefSelectedKilos = false;
-          $(".porkOrBeefRibs-kilos").each(function (i, el) {
+          $("#" + orderParent[0].id + " .porkOrBeefRibs-kilos").each(function (i, el) {
             if (el.checked) {
               isPorkOrBeefSelectedKilos = true;
             }
           });
 
           if (isPorkOrBeefSelectedKilos) {
-            $($(".porkOrBeefRibs")[4]).removeAttr("disabled");
-            $($(".porkOrBeefRibs")[5]).removeAttr("disabled");
-            $($(".porkOrBeefRibs")[6]).removeAttr("disabled");
+            $($("#" + orderParent[0].id + " .porkOrBeefRibs")[4]).removeAttr("disabled");
+            $($("#" + orderParent[0].id + " .porkOrBeefRibs")[5]).removeAttr("disabled");
+            $($("#" + orderParent[0].id + " .porkOrBeefRibs")[6]).removeAttr("disabled");
           } else {
-            $($(".porkOrBeefRibs")[4]).attr("disabled", "disabled");
-            $($(".porkOrBeefRibs")[5]).attr("disabled", "disabled");
-            $($(".porkOrBeefRibs")[6]).attr("disabled", "disabled");
+            $($("#" + orderParent[0].id + " .porkOrBeefRibs")[4]).attr("disabled", "disabled");
+            $($("#" + orderParent[0].id + " .porkOrBeefRibs")[5]).attr("disabled", "disabled");
+            $($("#" + orderParent[0].id + " .porkOrBeefRibs")[6]).attr("disabled", "disabled");
           }
         });
 
         $(".porkOrBeefRibs-flavours").on("change", function (evt) {
+          var orderParent = findOrderParentElement(evt.target)
           isPorkOrBeefSelectedFlavours = false;
-          $(".porkOrBeefRibs-flavours").each(function (i, el) {
+          $("#" + orderParent[0].id + " .porkOrBeefRibs-flavours").each(function (i, el) {
             if (el.checked) {
               isPorkOrBeefSelectedFlavours = true;
             }
           });
         });
         $(".wings").on("change", function (evt) {
-          $(".wings-flavours").prop("checked", false);
-          $(".wings-flavours-dip").prop("checked", false);
+          var orderParent = findOrderParentElement(evt.target)
+          $("#" + orderParent[0].id + " .wings-flavours").prop("checked", false);
+          $("#" + orderParent[0].id + " .wings-flavours-dip").prop("checked", false);
           isWingsSelected = false;
-          $(".wings").each(function (i, el) {
+          $("#" + orderParent[0].id + " .wings").each(function (i, el) {
             if (el.checked) {
               isWingsSelected = true;
             }
           });
 
           if (isWingsSelected) {
-            $(".wings-flavours").removeAttr("disabled");
+            $("#" + orderParent[0].id + " .wings-flavours").removeAttr("disabled");
 
-            $($(".wings-flavours")[5]).attr("disabled", "disabled");
-            $($(".wings-flavours")[6]).attr("disabled", "disabled");
+            $($("#" + orderParent[0].id + " .wings-flavours")[5]).attr("disabled", "disabled");
+            $($("#" + orderParent[0].id + " .wings-flavours")[6]).attr("disabled", "disabled");
           } else {
-            $(".wings-flavours").attr("disabled", "disabled");
+            $("#" + orderParent[0].id + " .wings-flavours").attr("disabled", "disabled");
           }
         });
         $(".wings-flavours").on("change", function (evt) {
+          var orderParent = findOrderParentElement(evt.target)
           isWingsFlavoursSelected = false;
-          $(".wings-flavours").each(function (i, el) {
+          $("#" + orderParent[0].id + " .wings-flavours").each(function (i, el) {
             if (el.checked) {
               isWingsFlavoursSelected = true;
             }
           });
 
           if (isWingsFlavoursSelected) {
-            $(".wings-flavours-dip").removeAttr("disabled");
+            $( "#" + orderParent[0].id + " .wings-flavours-dip").removeAttr("disabled");
           } else {
-            $(".wings-flavours-dip").attr("disabled", "disabled");
+            $( "#" + orderParent[0].id + " .wings-flavours-dip").attr("disabled", "disabled");
           }
         });
         $(".wings-flavours-dip").on("change", function (evt) {
+          var orderParent = findOrderParentElement(evt.target)
           isWingsFlavoursDipSelected = false;
-          $(".wings-flavours-dip").each(function (i, el) {
+          $("#" + orderParent[0].id + " .wings-flavours-dip").each(function (i, el) {
             if (el.checked) {
               isWingsFlavoursDipSelected = true;
             }
@@ -1857,17 +1862,18 @@
         });
 
         $(".turboActivators").on("change", function (evt) {
+          var orderParent = findOrderParentElement(evt.target)
           var c = 0;
-          $(".turboActivators").each(function (i, el) {
+          $("#" + orderParent[0].id + " .turboActivators").each(function (i, el) {
             if (el.checked) {
               c++;
-              $(".addChilli").removeAttr("disabled");
+              $("#" + orderParent[0].id + " .addChilli").removeAttr("disabled");
             }
           });
 
           if (c == 0) {
-            $(".addChilli").prop("checked", false);
-            $(".addChilli").attr("disabled", "disabled");
+            $("#" + orderParent[0].id + " .addChilli").prop("checked", false);
+            $("#" + orderParent[0].id + " .addChilli").attr("disabled", "disabled");
           }
         });
       }
@@ -2006,6 +2012,14 @@
             $(".collapse")
               .last()
               .find(".porkOrBeefRibs")
+              .attr("disabled", "disabled");
+            $(".collapse")
+              .last()
+              .find(".wings-flavours")
+              .attr("disabled", "disabled");
+            $(".collapse")
+              .last()
+              .find(".addChilli")
               .attr("disabled", "disabled");
             orders++;
             addChange();
