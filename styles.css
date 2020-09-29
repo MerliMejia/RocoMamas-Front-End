@@ -30,8 +30,7 @@ html {
   color: white;
   padding: 5px;
   text-align: center;
-  width: calc(100% + 30px);
-  margin-left: -15px;
+  width: 100%;
   margin-bottom: 20px;
   position: relative;
   top: 91px;
@@ -44,7 +43,7 @@ html {
 
 #customFontsContainerList {
   margin-top: 90px;
-  width: calc(100% + 15px);
+  width: 100%;
 }
 
 input {
@@ -131,7 +130,7 @@ h4 {
 
 .openOrder {
   background-color: transparent;
-  width: calc(100% + 30px);
+  width: 100%;
   text-align: left;
   margin-left: -15px;
   border-style: none;
