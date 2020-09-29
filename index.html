@@ -70,10 +70,6 @@
       </div>
     </div>
 
-    <div class="" id="tittleContainer">
-      <h1>SMASHBURGER</h1>
-    </div>
-
     <section class="orderBody">
       <div class="container" id="customFontsContainerList">
         <div style="background-color: #3b3b3b; height: fit-content" class="row">
@@ -104,6 +100,10 @@
               EDIT
             </h4>
           </div>
+        </div>
+
+        <div class="" id="tittleContainer">
+          <h1>SMASHBURGER</h1>
         </div>
 
         <div class="collapse" id="c-0">
@@ -1991,6 +1991,7 @@
           $(".orderBody:last .collapsing").attr("id", newArial);
 
           $(".orderBody:last").css("margin-top", "-20px");
+          $(".orderBody:last #tittleContainer").remove()
           $(".orderBody:last #customFontsContainerList").css(
             "margin-top",
             "0px"
