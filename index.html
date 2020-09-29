@@ -1537,10 +1537,12 @@
       var isWingsFlavoursDipSelected = false;
 
       function findOrderParentElement(el) {
+        // console.log(el);
         if ($(el).hasClass("collapse")) {
+          // console.log("???");
           return $(el);
         }
-        return findOrderParentElement($(el).parent());
+        return findOrderParentElement($(el).parent()[0]);
       }
 
       function placeOrder() {
@@ -1614,7 +1616,7 @@
 
       function renewAddOnchange() {
         console.log("RENEW EVENT HANDLERS");
-        isBurguerSelected = false;
+        // isBurguerSelected = false;
         isBurguerRequiredSelected = false;
         isPorkOrBeefSelected = false;
         isPorkOrBeefSelectedKilos = false;
@@ -1637,15 +1639,15 @@
             }
           });
 
-          $(
-            "#" +
-              findOrderParentElement(checkedElement)[0].id +
-              " .burguersRequiredCreate"
-          ).each(function (i, el) {
-            if (el.checked) {
-              isBurguerRequiredSelected = true;
+          var orderParent = findOrderParentElement(checkedElement);
+
+          $("#" + orderParent[0].id + " .burguersRequiredCreate").each(
+            function (i, el) {
+              if (el.checked) {
+                isBurguerRequiredSelected = true;
+              }
             }
-          });
+          );
 
           // console.log(
           //   "CLIK: ",
@@ -1662,40 +1664,24 @@
               if (!isBurguerRequiredSelected) {
                 if (orange) {
                   orange = false;
-                  $(
-                    "#" +
-                      findOrderParentElement(checkedElement)[0].id +
-                      " .burguersRequiredCreate"
-                  )
+                  $("#" + orderParent[0].id + " .burguersRequiredCreate")
                     .next()
                     .css("color", "#f58220");
                 } else {
                   orange = true;
-                  $(
-                    "#" +
-                      findOrderParentElement(checkedElement)[0].id +
-                      " .burguersRequiredCreate"
-                  )
+                  $("#" + orderParent[0].id + " .burguersRequiredCreate")
                     .next()
                     .css("color", "black");
                 }
 
                 if (!isBurguerSelected) {
-                  $(
-                    "#" +
-                      findOrderParentElement(checkedElement)[0].id +
-                      " .burguersRequiredCreate"
-                  )
+                  $("#" + orderParent[0].id + " .burguersRequiredCreate")
                     .next()
                     .css("color", "black");
                   clearInterval(int);
                 }
               } else {
-                $(
-                  "#" +
-                    findOrderParentElement(checkedElement)[0].id +
-                    " .burguersRequiredCreate"
-                )
+                $("#" + orderParent[0].id + " .burguersRequiredCreate")
                   .next()
                   .css("color", "black");
                 clearInterval(int);
@@ -1711,11 +1697,8 @@
           if (evt.target.checked) {
             checkedElement = evt.target;
           }
-          $(
-            "#" +
-              findOrderParentElement(checkedElement)[0].id +
-              " .burgersInput"
-          ).each(function (i, el) {
+          var orderParent = findOrderParentElement(checkedElement);
+          $("#" + orderParent[0].id + " .burgersInput").each(function (i, el) {
             if (el.checked) {
               isBurguerSelected = true;
             }
@@ -1725,7 +1708,7 @@
           //   "CLICK: ",
           //   $(
           //     "#" +
-          //       findOrderParentElement(checkedElement)[0].id +
+          //       orderParent[0].id +
           //       " .burguersRequiredCreate"
           //   )
           // );
@@ -1737,43 +1720,29 @@
                 if (!isBurguerRequiredSelected) {
                   if (orange) {
                     orange = false;
-                    $(
-                      "#" +
-                        findOrderParentElement(checkedElement)[0].id +
-                        " .burguersRequiredCreate"
-                    )
+                    $("#" + orderParent[0].id + " .burguersRequiredCreate")
                       .next()
                       .css("color", "#f58220");
                   } else {
                     orange = true;
-                    $(
-                      "#" +
-                        findOrderParentElement(checkedElement)[0].id +
-                        " .burguersRequiredCreate"
-                    )
+                    $("#" + orderParent[0].id + " .burguersRequiredCreate")
                       .next()
                       .css("color", "black");
                   }
 
                   if (!isBurguerSelected) {
-                    $(
-                      "#" +
-                        findOrderParentElement(checkedElement)[0].id +
-                        " .burguersRequiredCreate"
-                    )
+                    $("#" + orderParent[0].id + " .burguersRequiredCreate")
                       .next()
                       .css("color", "black");
+                      // console.log("STOP EFFECT")
                     renewAddOnchange();
                     clearInterval(int);
                   }
                 } else {
-                  $(
-                    "#" +
-                      findOrderParentElement(checkedElement)[0].id +
-                      " .burguersRequiredCreate"
-                  )
+                  $("#" + orderParent[0].id + " .burguersRequiredCreate")
                     .next()
                     .css("color", "black");
+                    // console.log("STOP EFFECT")
                   renewAddOnchange();
                   clearInterval(int);
                 }
@@ -2023,7 +1992,7 @@
             el.checked = false;
             $(el).removeAttr("disabled");
           });
-          isBurguerSelected = false;
+          // isBurguerSelected = false;
           isBurguerRequiredSelected = false;
           isPorkOrBeefSelected = false;
           isPorkOrBeefSelectedKilos = false;
