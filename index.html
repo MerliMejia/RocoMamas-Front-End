@@ -1752,11 +1752,13 @@
           }
         });
         $(".porkOrBeefRibs-activator").on("change", function (evt) {
-          $(".porkOrBeefRibs-kilos").prop("checked", false);
-          $(".porkOrBeefRibs-flavours").prop("checked", false);
+
+          var orderParent = findOrderParentElement(evt.target)
+          $("#" + orderParent[0].id + " .porkOrBeefRibs-kilos").prop("checked", false);
+          $("#" + orderParent[0].id + " .porkOrBeefRibs-flavours").prop("checked", false);
           isPorkOrBeefSelected = false;
           var selected = null;
-          $(".porkOrBeefRibs-activator").each(function (i, el) {
+          $("#" + orderParent[0].id + " .porkOrBeefRibs-activator").each(function (i, el) {
             if ($(evt.target).attr("name") !== el.name) {
               if (evt.target.checked) {
                 $(el).attr("disabled", "disabled");
