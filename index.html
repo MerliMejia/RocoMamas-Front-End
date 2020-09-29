@@ -72,8 +72,17 @@
 
     <section class="orderBody">
       <div class="container" id="customFontsContainerList">
-        <div style="background-color: #3b3b3b; height: fit-content" class="row">
-          <div style="height: fit-content" class="col-10">
+        <div style="background-color: #3b3b3b; height: 60px" class="row">
+          <div
+            style="
+              height: fit-content;
+              position: relative;
+              top: 0;
+              bottom: 0;
+              margin: auto;
+            "
+            class="col-10"
+          >
             <a
               class="btn btn-primary openOrder"
               data-toggle="collapse"
@@ -85,14 +94,23 @@
               Order for Rockstar: 1
             </a>
           </div>
-          <div style="height: fit-content; position: relative" class="col-2">
+          <div
+            style="
+              height: fit-content;
+              position: relative;
+              top: 0;
+              bottom: 0;
+              margin: auto;
+            "
+            class="col-2"
+          >
             <h4
               order="c-0"
               onclick="editOrder(this)"
               style="
                 width: 100%;
                 text-align: center;
-                margin-top: 7px;
+
                 color: #f58220;
                 font-weight: 900;
               "
@@ -1415,7 +1433,10 @@
               SIX BOMBS
             </h3>
 
-            <div class="container extraMarginBottom">
+            <div
+              style="margin-bottom: 110px"
+              class="container extraMarginBottom"
+            >
               <div class="row">
                 <div class="col-1">
                   <input type="checkbox" name="" />
@@ -1627,7 +1648,6 @@
         $(".burguersRequiredCreate").off("change");
         $(".burgersInput").off("change");
         $(".burguersRequiredCreate").on("change", function (evt) {
-          
           isBurguerRequiredSelected = false;
           // console.log(
           //   "IS BURGUER REQUIRED SELECTED: ",
@@ -1637,8 +1657,8 @@
           $(".burguersRequiredCreate").each(function (i, el) {
             if (el.checked) {
               checkedElement = el;
-            }else{
-              checkedElement = evt.target
+            } else {
+              checkedElement = evt.target;
             }
           });
 
@@ -1646,7 +1666,6 @@
 
           $("#" + orderParent[0].id + " .burguersRequiredCreate").each(
             function (i, el) {
-              
               if (el.checked) {
                 isBurguerRequiredSelected = true;
               }
@@ -1756,74 +1775,125 @@
           }
         });
         $(".porkOrBeefRibs-activator").on("change", function (evt) {
-
-          var orderParent = findOrderParentElement(evt.target)
-          $("#" + orderParent[0].id + " .porkOrBeefRibs-kilos").prop("checked", false);
-          $("#" + orderParent[0].id + " .porkOrBeefRibs-flavours").prop("checked", false);
+          var orderParent = findOrderParentElement(evt.target);
+          $("#" + orderParent[0].id + " .porkOrBeefRibs-kilos").prop(
+            "checked",
+            false
+          );
+          $("#" + orderParent[0].id + " .porkOrBeefRibs-flavours").prop(
+            "checked",
+            false
+          );
           isPorkOrBeefSelected = false;
           var selected = null;
-          $("#" + orderParent[0].id + " .porkOrBeefRibs-activator").each(function (i, el) {
-            if ($(evt.target).attr("name") !== el.name) {
-              if (evt.target.checked) {
-                $(el).attr("disabled", "disabled");
-              } else {
-                $(el).removeAttr("disabled");
+          $("#" + orderParent[0].id + " .porkOrBeefRibs-activator").each(
+            function (i, el) {
+              if ($(evt.target).attr("name") !== el.name) {
+                if (evt.target.checked) {
+                  $(el).attr("disabled", "disabled");
+                } else {
+                  $(el).removeAttr("disabled");
+                }
+              }
+              if (el.checked) {
+                selected = $(el).parent().next().find("h6").text();
+                if (selected == "Pork") {
+                  $(
+                    $("#" + orderParent[0].id + " .porkOrBeefRibs")[0]
+                  ).removeAttr("disabled");
+                  $(
+                    $("#" + orderParent[0].id + " .porkOrBeefRibs")[1]
+                  ).removeAttr("disabled");
+                  $(
+                    $("#" + orderParent[0].id + " .porkOrBeefRibs")[2]
+                  ).removeAttr("disabled");
+                  $(
+                    $("#" + orderParent[0].id + " .porkOrBeefRibs")[3]
+                  ).removeAttr("disabled");
+                } else {
+                  $(
+                    $("#" + orderParent[0].id + " .porkOrBeefRibs")[1]
+                  ).removeAttr("disabled");
+                  $(
+                    $("#" + orderParent[0].id + " .porkOrBeefRibs")[3]
+                  ).removeAttr("disabled");
+                }
+                isPorkOrBeefSelected = true;
               }
             }
-            if (el.checked) {
-              selected = $(el).parent().next().find("h6").text();
-              if (selected == "Pork") {
-                $($("#" + orderParent[0].id +" .porkOrBeefRibs")[0]).removeAttr("disabled");
-                $($("#" + orderParent[0].id +" .porkOrBeefRibs")[1]).removeAttr("disabled");
-                $($("#" + orderParent[0].id +" .porkOrBeefRibs")[2]).removeAttr("disabled");
-                $($("#" + orderParent[0].id +" .porkOrBeefRibs")[3]).removeAttr("disabled");
-              } else {
-                $($("#" + orderParent[0].id + " .porkOrBeefRibs")[1]).removeAttr("disabled");
-                $($("#" + orderParent[0].id + " .porkOrBeefRibs")[3]).removeAttr("disabled");
-              }
-              isPorkOrBeefSelected = true;
-            }
-          });
+          );
 
           if (!isPorkOrBeefSelected) {
-            $("#" + orderParent[0].id + " .porkOrBeefRibs").attr("disabled", "disabled");
+            $("#" + orderParent[0].id + " .porkOrBeefRibs").attr(
+              "disabled",
+              "disabled"
+            );
           }
         });
 
         $(".porkOrBeefRibs-kilos").on("change", function (evt) {
-          var orderParent = findOrderParentElement(evt.target)
-          $("#" + orderParent[0].id + " .porkOrBeefRibs-flavours").prop("checked", false);
+          var orderParent = findOrderParentElement(evt.target);
+          $("#" + orderParent[0].id + " .porkOrBeefRibs-flavours").prop(
+            "checked",
+            false
+          );
           isPorkOrBeefSelectedKilos = false;
-          $("#" + orderParent[0].id + " .porkOrBeefRibs-kilos").each(function (i, el) {
+          $("#" + orderParent[0].id + " .porkOrBeefRibs-kilos").each(function (
+            i,
+            el
+          ) {
             if (el.checked) {
               isPorkOrBeefSelectedKilos = true;
             }
           });
 
           if (isPorkOrBeefSelectedKilos) {
-            $($("#" + orderParent[0].id + " .porkOrBeefRibs")[4]).removeAttr("disabled");
-            $($("#" + orderParent[0].id + " .porkOrBeefRibs")[5]).removeAttr("disabled");
-            $($("#" + orderParent[0].id + " .porkOrBeefRibs")[6]).removeAttr("disabled");
+            $($("#" + orderParent[0].id + " .porkOrBeefRibs")[4]).removeAttr(
+              "disabled"
+            );
+            $($("#" + orderParent[0].id + " .porkOrBeefRibs")[5]).removeAttr(
+              "disabled"
+            );
+            $($("#" + orderParent[0].id + " .porkOrBeefRibs")[6]).removeAttr(
+              "disabled"
+            );
           } else {
-            $($("#" + orderParent[0].id + " .porkOrBeefRibs")[4]).attr("disabled", "disabled");
-            $($("#" + orderParent[0].id + " .porkOrBeefRibs")[5]).attr("disabled", "disabled");
-            $($("#" + orderParent[0].id + " .porkOrBeefRibs")[6]).attr("disabled", "disabled");
+            $($("#" + orderParent[0].id + " .porkOrBeefRibs")[4]).attr(
+              "disabled",
+              "disabled"
+            );
+            $($("#" + orderParent[0].id + " .porkOrBeefRibs")[5]).attr(
+              "disabled",
+              "disabled"
+            );
+            $($("#" + orderParent[0].id + " .porkOrBeefRibs")[6]).attr(
+              "disabled",
+              "disabled"
+            );
           }
         });
 
         $(".porkOrBeefRibs-flavours").on("change", function (evt) {
-          var orderParent = findOrderParentElement(evt.target)
+          var orderParent = findOrderParentElement(evt.target);
           isPorkOrBeefSelectedFlavours = false;
-          $("#" + orderParent[0].id + " .porkOrBeefRibs-flavours").each(function (i, el) {
-            if (el.checked) {
-              isPorkOrBeefSelectedFlavours = true;
+          $("#" + orderParent[0].id + " .porkOrBeefRibs-flavours").each(
+            function (i, el) {
+              if (el.checked) {
+                isPorkOrBeefSelectedFlavours = true;
+              }
             }
-          });
+          );
         });
         $(".wings").on("change", function (evt) {
-          var orderParent = findOrderParentElement(evt.target)
-          $("#" + orderParent[0].id + " .wings-flavours").prop("checked", false);
-          $("#" + orderParent[0].id + " .wings-flavours-dip").prop("checked", false);
+          var orderParent = findOrderParentElement(evt.target);
+          $("#" + orderParent[0].id + " .wings-flavours").prop(
+            "checked",
+            false
+          );
+          $("#" + orderParent[0].id + " .wings-flavours-dip").prop(
+            "checked",
+            false
+          );
           isWingsSelected = false;
           $("#" + orderParent[0].id + " .wings").each(function (i, el) {
             if (el.checked) {
@@ -1832,33 +1902,55 @@
           });
 
           if (isWingsSelected) {
-            $("#" + orderParent[0].id + " .wings-flavours").removeAttr("disabled");
+            $("#" + orderParent[0].id + " .wings-flavours").removeAttr(
+              "disabled"
+            );
 
-            $($("#" + orderParent[0].id + " .wings-flavours")[5]).attr("disabled", "disabled");
-            $($("#" + orderParent[0].id + " .wings-flavours")[6]).attr("disabled", "disabled");
+            $($("#" + orderParent[0].id + " .wings-flavours")[5]).attr(
+              "disabled",
+              "disabled"
+            );
+            $($("#" + orderParent[0].id + " .wings-flavours")[6]).attr(
+              "disabled",
+              "disabled"
+            );
           } else {
-            $("#" + orderParent[0].id + " .wings-flavours").attr("disabled", "disabled");
+            $("#" + orderParent[0].id + " .wings-flavours").attr(
+              "disabled",
+              "disabled"
+            );
           }
         });
         $(".wings-flavours").on("change", function (evt) {
-          var orderParent = findOrderParentElement(evt.target)
+          var orderParent = findOrderParentElement(evt.target);
           isWingsFlavoursSelected = false;
-          $("#" + orderParent[0].id + " .wings-flavours").each(function (i, el) {
+          $("#" + orderParent[0].id + " .wings-flavours").each(function (
+            i,
+            el
+          ) {
             if (el.checked) {
               isWingsFlavoursSelected = true;
             }
           });
 
           if (isWingsFlavoursSelected) {
-            $( "#" + orderParent[0].id + " .wings-flavours-dip").removeAttr("disabled");
+            $("#" + orderParent[0].id + " .wings-flavours-dip").removeAttr(
+              "disabled"
+            );
           } else {
-            $( "#" + orderParent[0].id + " .wings-flavours-dip").attr("disabled", "disabled");
+            $("#" + orderParent[0].id + " .wings-flavours-dip").attr(
+              "disabled",
+              "disabled"
+            );
           }
         });
         $(".wings-flavours-dip").on("change", function (evt) {
-          var orderParent = findOrderParentElement(evt.target)
+          var orderParent = findOrderParentElement(evt.target);
           isWingsFlavoursDipSelected = false;
-          $("#" + orderParent[0].id + " .wings-flavours-dip").each(function (i, el) {
+          $("#" + orderParent[0].id + " .wings-flavours-dip").each(function (
+            i,
+            el
+          ) {
             if (el.checked) {
               isWingsFlavoursDipSelected = true;
             }
@@ -1866,9 +1958,12 @@
         });
 
         $(".turboActivators").on("change", function (evt) {
-          var orderParent = findOrderParentElement(evt.target)
+          var orderParent = findOrderParentElement(evt.target);
           var c = 0;
-          $("#" + orderParent[0].id + " .turboActivators").each(function (i, el) {
+          $("#" + orderParent[0].id + " .turboActivators").each(function (
+            i,
+            el
+          ) {
             if (el.checked) {
               c++;
               $("#" + orderParent[0].id + " .addChilli").removeAttr("disabled");
@@ -1877,7 +1972,10 @@
 
           if (c == 0) {
             $("#" + orderParent[0].id + " .addChilli").prop("checked", false);
-            $("#" + orderParent[0].id + " .addChilli").attr("disabled", "disabled");
+            $("#" + orderParent[0].id + " .addChilli").attr(
+              "disabled",
+              "disabled"
+            );
           }
         });
       }
@@ -1991,7 +2089,7 @@
           $(".orderBody:last .collapsing").attr("id", newArial);
 
           $(".orderBody:last").css("margin-top", "-20px");
-          $(".orderBody:last #tittleContainer").remove()
+          $(".orderBody:last #tittleContainer").remove();
           $(".orderBody:last #customFontsContainerList").css(
             "margin-top",
             "0px"
