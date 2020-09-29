@@ -1734,7 +1734,7 @@
                     $("#" + orderParent[0].id + " .burguersRequiredCreate")
                       .next()
                       .css("color", "black");
-                      // console.log("STOP EFFECT")
+                    // console.log("STOP EFFECT")
                     renewAddOnchange();
                     clearInterval(int);
                   }
@@ -1742,7 +1742,7 @@
                   $("#" + orderParent[0].id + " .burguersRequiredCreate")
                     .next()
                     .css("color", "black");
-                    // console.log("STOP EFFECT")
+                  // console.log("STOP EFFECT")
                   renewAddOnchange();
                   clearInterval(int);
                 }
@@ -2000,9 +2000,16 @@
           isWingsSelected = false;
           isWingsFlavoursSelected = false;
           isWingsFlavoursDipSelected = false;
-          orders++;
-          addChange();
-          renewAddOnchange();
+          var si = setInterval(function () {
+            $(".collapse")
+              .last()
+              .find(".porkOrBeefRibs")
+              .attr("disabled", "disabled");
+            orders++;
+            addChange();
+            renewAddOnchange();
+            clearInterval(si);
+          }, 500);
         } else {
           alert("You have reached the maximum limit number of orders!");
         }
