@@ -2088,6 +2088,7 @@
           index++;
 
           var newHref = href.split("-")[0] + "-" + index;
+
           $(".orderBody:last .openOrder").attr("href", newHref);
 
           var arial = $(".orderBody:last .openOrder").attr("aria-controls");
@@ -2096,11 +2097,14 @@
 
           var newArial = arial.split("-")[0] + "-" + aIndex;
 
+          console.log(newArial);
+
           $(".orderBody:last .openOrder").text(
             "Show order for : Rockstar " + (aIndex + 1)
           );
           $(".orderBody:last .openOrder").attr("aria-controls", newArial);
           $(".orderBody:last .collapsing").attr("id", newArial);
+          $(".orderBody:last .collapse").attr("id", newArial);
 
           $(".orderBody:last").css("margin-top", "-20px");
           $(".orderBody:last #customFontsContainerList").css(
