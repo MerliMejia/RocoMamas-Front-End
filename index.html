@@ -91,7 +91,7 @@
               aria-expanded="false"
               aria-controls="c-0"
             >
-              Show Order for : Rockstar 1
+              Order for : Rockstar 1
             </a>
           </div>
           <div
@@ -2017,7 +2017,7 @@
           orderEl.text().replace(/\s/g, "").split(":")[1]
         );
         // if (pront !== null && pront.length > 0) console.log("????");
-        orderEl.text("Show Order for : " + pront);
+        orderEl.text("Order for : " + pront);
       }
 
       function addChange() {
@@ -2071,7 +2071,7 @@
             var arr = t.split(":");
 
             if (arr.length == 1) {
-              $(el).text("Show Order for : " + arr[0]);
+              $(el).text("Order for : " + arr[0]);
             } else {
               $(el).text(t);
             }
@@ -2100,7 +2100,7 @@
           console.log(newArial);
 
           $(".orderBody:last .openOrder").text(
-            "Show order for : Rockstar " + (aIndex + 1)
+            "Order for : Rockstar " + (aIndex + 1)
           );
           $(".orderBody:last .openOrder").attr("aria-controls", newArial);
           $(".orderBody:last .collapsing").attr("id", newArial);
