@@ -91,7 +91,7 @@
               aria-expanded="false"
               aria-controls="c-0"
             >
-              Order for Rockstar: 1
+              Show Order for : Rockstar 1
             </a>
           </div>
           <div
@@ -120,11 +120,10 @@
           </div>
         </div>
 
-        <div class="" id="tittleContainer">
-          <h1>SMASHBURGER</h1>
-        </div>
-
         <div class="collapse" id="c-0">
+          <div class="" id="tittleContainer">
+            <h1>SMASHBURGER</h1>
+          </div>
           <form action="">
             <div style="margin-top: 20px" class="row">
               <div class="col-1">
@@ -2017,8 +2016,8 @@
           "PLEASE, ENTER NEW NAME",
           orderEl.text().replace(/\s/g, "").split(":")[1]
         );
-        if (pront !== null && pront.length > 0)
-          orderEl.text(orderEl.text().split(":")[0] + ": " + pront);
+        // if (pront !== null && pront.length > 0) console.log("????");
+        orderEl.text("Show Order for : " + pront);
       }
 
       function addChange() {
@@ -2067,8 +2066,22 @@
 
       function addOrder() {
         if (orders < 7) {
-          $(".orderBody:last .openOrder").click();
+          $(".orderBody .openOrder").each(function (i, el) {
+            var t = $(el).text();
+            var arr = t.split(":");
+
+            if (arr.length == 1) {
+              $(el).text("Show Order for : " + arr[0]);
+            } else {
+              $(el).text(t);
+            }
+
+            // console.log(arr);
+          });
+          $(".collapse").collapse("hide");
           $(".orderBody:last").after($(".orderBody:last").clone());
+          var smash = $(".orderBody:last #tittleContainer");
+          // console.log(smash);
 
           var href = $(".orderBody:last .openOrder").attr("href");
           var index = href.split("-")[1];
@@ -2082,19 +2095,22 @@
           aIndex++;
 
           var newArial = arial.split("-")[0] + "-" + aIndex;
+
           $(".orderBody:last .openOrder").text(
-            "Order for Rockstar:  " + (aIndex + 1)
+            "Show order for : Rockstar " + (aIndex + 1)
           );
           $(".orderBody:last .openOrder").attr("aria-controls", newArial);
           $(".orderBody:last .collapsing").attr("id", newArial);
 
           $(".orderBody:last").css("margin-top", "-20px");
-          $(".orderBody:last #tittleContainer").remove();
           $(".orderBody:last #customFontsContainerList").css(
             "margin-top",
             "0px"
           );
-
+          $(".orderBody:last #customFontsContainerList .collapse show").before(
+            smash
+          );
+          //$(".orderBody").not(":last").find("#tittleContainer").remove();
           $(".orderBody:last .openOrder").click();
           $(".orderBody:last .openOrder")
             .next()
@@ -2125,11 +2141,12 @@
               .find(".addChilli")
               .attr("disabled", "disabled");
             orders++;
+            console.log("ORDERS: ", orders);
             addChange();
             renewAddOnchange();
             clearInterval(si);
             window.scrollTo(0, 0);
-          }, 500);
+          }, 100);
         } else {
           alert("You have reached the maximum limit number of orders!");
         }
