@@ -81,7 +81,7 @@
               bottom: 0;
               margin: auto;
             "
-            class="col-10"
+            class="col-9"
           >
             <a
               class="btn btn-primary openOrder"
@@ -102,7 +102,7 @@
               bottom: 0;
               margin: auto;
             "
-            class="col-2"
+            class="col-3"
           >
             <h4
               order="c-0"
@@ -110,12 +110,12 @@
               style="
                 width: 100%;
                 text-align: center;
-
+                font-size: 13px;
                 color: #f58220;
                 font-weight: 900;
               "
             >
-              EDIT
+              Show/Hide Rename
             </h4>
           </div>
         </div>
@@ -2017,7 +2017,9 @@
           orderEl.text().replace(/\s/g, "").split(":")[1]
         );
         // if (pront !== null && pront.length > 0) console.log("????");
-        orderEl.text("Order for : " + pront);
+        if (pront !== null && pront.length > 0) {
+          orderEl.text("Order for : " + pront);
+        }
       }
 
       function addChange() {
