@@ -1464,7 +1464,7 @@
               aria-expanded="false"
               aria-controls="c-0"
             >
-              Order for : Rockstar 1
+              Show/Hide order for Rockstar 1
             </a>
           </div>
           <div
@@ -1487,7 +1487,7 @@
                 color: #f58220;
               "
             >
-              Show/Hide Rename
+              Rename
             </h4>
           </div>
         </div>
@@ -3383,14 +3383,35 @@
 
       function editOrder(el) {
         var orderEl = $(el).parent().prev().find("a");
+        var text = orderEl.text().split(" ");
+        var name = [];
+
+        for (let i = text.length - 1; i > 0; i--) {
+          if (text[i] == "for") {
+            break;
+          } else {
+            name.push(text[i]);
+          }
+        }
+
+        var nameReversed = name.reverse();
+        var nameText = "";
+        for (var i = 0; i < nameReversed.length; i++) {
+          if (i == 0) {
+            nameText += nameReversed[i];
+          } else {
+            nameText += " " + nameReversed[i];
+          }
+        }
+
         //console.log(orderEl);
         var pront = prompt(
           "PLEASE, ENTER NEW NAME",
-          orderEl.text().replace(/\s/g, "").split(":")[1]
+          nameText.replace(/\s/g, "")
         );
         // if (pront !== null && pront.length > 0) console.log("????");
         if (pront !== null && pront.length > 0) {
-          orderEl.text("Order for : " + pront);
+          orderEl.text("Show/Hide order for " + pront);
         }
       }
 
@@ -3450,9 +3471,9 @@
               var arr = t.split(":");
 
               if (arr.length == 1) {
-                $(el).text("Order for : " + arr[0]);
-              } else {
                 $(el).text(t);
+              } else {
+                $(el).text("Show/Hide order for " + arr[0]);
               }
 
               // console.log(arr);
@@ -3479,7 +3500,7 @@
             console.log(newArial);
 
             $(".orderBody:last .openOrder").text(
-              "Order for : Rockstar " + (aIndex + 1)
+              "Show/Hide order for Rockstar " + (aIndex + 1)
             );
             $(".orderBody:last .openOrder").attr("aria-controls", newArial);
             $(".orderBody:last .collapsing").attr("id", newArial);
