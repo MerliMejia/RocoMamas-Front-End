@@ -242,11 +242,3 @@ h4 {
   right: 0;
   color: white;
 }
-
-.showOrder {
-  display: block;
-}
-
-.hideOrder {
-  display: none;
-}
